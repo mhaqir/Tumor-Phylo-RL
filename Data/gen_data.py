@@ -1,4 +1,3 @@
-
 import configparser
 import numpy as np
 import pandas as pd
@@ -6,6 +5,7 @@ from random import uniform
 from copy import deepcopy
 import itertools
 import os
+import shutil
 
 config = configparser.ConfigParser()
 config.read('config.ini')
@@ -19,7 +19,6 @@ p_dir = config['Directory']['p_dir']
 n_dir = config['Directory']['n_dir']
 p_na_dir = config['Directory']['p_na_dir']
 ms_dir = config['Directory']['ms_dir']
-
 
 def count3gametes(matrix,nCells, nMuts):
     columnPairs = list(itertools.permutations(range(nMuts), 2))
@@ -37,20 +36,23 @@ def count3gametes(matrix,nCells, nMuts):
 def run_ms(nMat, nCells, nMuts, ms_dir):
     m = []
     matrices = np.zeros((nMat, nCells, nMuts), dtype = np.int8)
+    os.mkdir(p_dir + '/tmp')
     for i in range(1, nMat + 1):
-        cmd = "{ms_dir} {nCells} 1 -s {nMuts} | tail -n {nCells} > {p_dir}/m.txt".format(ms_dir = ms_dir, nCells = nCells, nMuts = nMuts, p_dir = p_dir)
+        cmd = "{ms_dir} {nCells} 1 -s {nMuts} | tail -n {nCells} > {tmp_dir}/m{i}.txt".format(ms_dir = ms_dir, nCells = nCells, nMuts = nMuts, tmp_dir = p_dir + '/tmp', i = i)
         os.system(cmd)
-        with open(p_dir + '/m.txt', 'r') as f:
-            l = [line for line in f]
+    for j in range(1, nMat + 1):
+        f = open(p_dir + "/tmp/m{j}.txt".format(j = j), 'r')
+        l = [line for line in f]
         l1 = [s.strip('\n') for s in l]
         l2 = np.array([[int(s) for s in q] for q in l1])  # Original matrix
-        matrices[i-1,:,:] = l2
+        matrices[j-1,:,:] = l2
         m.append(tuple(l2.flatten()))
-    os.remove(p_dir + '/m.txt')
+        f.close()
+    shutil.rmtree(p_dir + '/tmp')
     m1 = list(set(m))
     matrices_u = np.zeros((len(m1), nCells, nMuts), dtype = np.int8)
-    for j in range(len(m1)):
-        matrices_u[j,:,:] = np.asarray(m1[j]).reshape((nCells, nMuts))
+    for k in range(len(m1)):
+        matrices_u[k,:,:] = np.asarray(m1[k]).reshape((nCells, nMuts))
     return matrices_u  # returns all of generated unique matrices
         
 
@@ -170,10 +172,11 @@ def main():
     matrices_u = run_ms(nMat, nCells, nMuts, ms_dir)
     add_noise(matrices_u, nCells, nMuts, fp_fn_fixed = True)
     
+    
 if __name__ == '__main__':
     main()
     
-# for i in range(5):
+for i in range(5):
 #     l2 = pd.read_csv(p_dir + '/mp{}.txt'.format(i+1), sep="\t")
 #     l2.set_index('cellID/mutID', inplace=True)
 #     l3 = pd.read_csv(n_dir + '/mn{}.txt'.format(i+1), sep="\t")
@@ -185,6 +188,6 @@ if __name__ == '__main__':
 #     print(l3.values)
 #     print("------------------------------------------")
 #     print(l4.values)
-#     print(np.logical_xor(l3.values , l4.values))
+#     print(np.logical_xor(l3.values , l2.values))
 #     print("------------------------------------------")
-#     print(np.sum(np.logical_xor(l3.values , l4.values)))
+#     print(np.sum(np.logical_xor(l3.values , l2.values)))
