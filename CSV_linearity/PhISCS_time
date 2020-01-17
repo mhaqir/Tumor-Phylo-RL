@@ -4,3 +4,43 @@
 0      84.231967  0.031188     0.01      0.2
 1      81.769670  0.001911     0.01      0.2
 (env3.6) [esadeqia@c71 PhylogenyBranchingClassification]$
+
+-------------------------------------------------------------------
+
+
+
+Using TensorFlow backend.
+Platform: esadeqia@c71
+Logs for this run will be stored at /N/u/esadeqia/Carbonate/PhylogenyBranchingClassification/Outputs/1579275607.7528791.log
+timeexperiment.py starts here
+2020-01-17 10:40:07.984849: W tensorflow/stream_executor/platform/default/dso_loader.cc:55] Could not load dynamic library 'libcuda.so.1'; dlerror: libcuda.so.1: cannot open shared object file: No           such file or directory; LD_LIBRARY_PATH: /N/soft/rhel7/perl/gnu/5.24.1/lib:/N/soft/rhel7/python/2.7.16/lib/libfabric:/N/soft/rhel7/python/2.7.16/lib:/N/soft/rhel7/python/2.7.16/pkgs/openssl-1.0.2r-          2/lib:/N/soft/rhel7/intel/18.0.2/compilers_and_libraries_2018.2.199/linux/compiler/lib/intel64:/N/soft/rhel7/intel/18.0.2/compilers_and_libraries_2018.2.199/linux/ipp/lib/intel64:/N/soft/rhel7/inte          l/18.0.2/compilers_and_libraries_2018.2.199/linux/compiler/lib/intel64_lin:/N/soft/rhel7/intel/18.0.2/compilers_and_libraries_2018.2.199/linux/mkl/lib/intel64_lin:/N/soft/rhel7/intel/18.0.2/compile          rs_and_libraries_2018.2.199/linux/tbb/lib/intel64/gcc4.7:/N/soft/rhel7/intel/18.0.2/debugger_2018/iga/lib:/N/soft/rhel7/intel/18.0.2/debugger_2018/libipt/intel64/lib:/N/soft/rhel7/intel/18.0.2/comp          ilers_and_libraries_2018.2.199/linux/daal/lib/intel64_lin:/N/soft/rhel7/gcc/6.3.0/lib64:/N/soft/rhel7/gcc/6.3.0/lib:~/external/gurobi811/linux64/lib
+2020-01-17 10:40:07.984941: E tensorflow/stream_executor/cuda/cuda_driver.cc:351] failed call to cuInit: UNKNOWN ERROR (303)
+2020-01-17 10:40:07.984997: I tensorflow/stream_executor/cuda/cuda_diagnostics.cc:156] kernel driver does not appear to be running on this host (c71): /proc/driver/nvidia/version does not exist
+2020-01-17 10:40:07.985266: I tensorflow/core/platform/cpu_feature_guard.cc:142] Your CPU supports instructions that this TensorFlow binary was not compiled to use: AVX2 FMA
+2020-01-17 10:40:07.992264: I tensorflow/core/platform/profile_utils/cpu_utils.cc:94] CPU Frequency: 2499890000 Hz
+2020-01-17 10:40:07.992397: I tensorflow/compiler/xla/service/service.cc:168] XLA service 0x55cc5bc2c800 initialized for platform Host (this does not guarantee that XLA will be used). Devices:
+2020-01-17 10:40:07.992436: I tensorflow/compiler/xla/service/service.cc:176]   StreamExecutor device (0): Host, Default Version
+  0%|                                                                                                                                                                          | 0/2 [00:00<?, ?it/s]          (500, 500)
+(500, 500)
+Changed value of parameter LogFile to
+   Prev: gurobi.log  Default:
+Changed value of parameter Threads to 1
+   Prev: 0  Min: 0  Max: 1024  Default: 0
+Changed value of parameter TimeLimit to 86400.0
+   Prev: 1e+100  Min: 0.0  Max: 1e+100  Default: 1e+100
+Generating variables...
+Generating constraints...
+ 50%|###########################################################################                                                                                                                               ###                                                                                                                                                                                                             | 1/2 [1:18:29<1:18:29, 4709.82s/it](500, 500)
+(500, 500)
+Changed value of parameter LogFile to
+   Prev: gurobi.log  Default:
+Changed value of parameter Threads to 1
+   Prev: 0  Min: 0  Max: 1024  Default: 0
+Changed value of parameter TimeLimit to 86400.0
+   Prev: 1e+100  Min: 0.0  Max: 1e+100  Default: 1e+100
+Generating variables...
+Generating constraints...
+100%|###########################################################################                                                                                                                               ################################################################################                                                                                                                               100%|###########################################################################                                                                                                                               ################################################################################                                                                                                                               ###| 2/2 [2:21:23<00:00, 4241.86s/it]
+   PhISCS_I_time   DL_time  fp_rate  fn_rate
+0    4708.726743  0.041759     0.01      0.2
+1    3772.772937  0.035300     0.01      0.2
