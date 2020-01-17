@@ -1,0 +1,64 @@
+(env3.7) [esadeqia@c71 PhylogenyBranchingClassification]$ python timeexperiment.py
+Using TensorFlow backend.
+Platform: esadeqia@c71
+Logs for this run will be stored at /N/u/esadeqia/Carbonate/PhylogenyBranchingClassification/Outputs/1579274254.1963236.log
+timeexperiment.py starts here
+2020-01-17 10:17:34.231729: I tensorflow/core/platform/cpu_feature_guard.cc:142] Your CPU supports instructions that this TensorFlow binary was not compiled to use: AVX2 FMA
+2020-01-17 10:17:34.240950: I tensorflow/core/platform/profile_utils/cpu_utils.cc:94] CPU Frequency: 2499890000 Hz
+2020-01-17 10:17:34.241263: I tensorflow/compiler/xla/service/service.cc:168] XLA service 0x559345d7c040 executing computations on platform Host. Devices:
+2020-01-17 10:17:34.241288: I tensorflow/compiler/xla/service/service.cc:175]   StreamExecutor device (0): Host, Default Version
+WARNING:tensorflow:Large dropout rate: 0.9 (>0.5). In TensorFlow 2.x, dropout() uses dropout rate instead of keep_prob. Please ensure that this is intended.
+100%|████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 50/50 [00:01<00:00, 37.72it/s]
+csvFile is saved to /N/u/esadeqia/Carbonate/PhylogenyBranchingClassification/Outputs/output_1579274256.022522.csv
+     DL_time  n  fp_rate  fn_rate
+0   0.037213  2     0.01      0.2
+1   0.001743  2     0.01      0.2
+2   0.001545  2     0.01      0.2
+3   0.001446  2     0.01      0.2
+4   0.001461  2     0.01      0.2
+5   0.001475  2     0.01      0.2
+6   0.001466  2     0.01      0.2
+7   0.001454  2     0.01      0.2
+8   0.001464  2     0.01      0.2
+9   0.001510  2     0.01      0.2
+10  0.001467  2     0.01      0.2
+11  0.001459  2     0.01      0.2
+12  0.001413  2     0.01      0.2
+13  0.001428  2     0.01      0.2
+14  0.001458  2     0.01      0.2
+15  0.001440  2     0.01      0.2
+16  0.001530  2     0.01      0.2
+17  0.001448  2     0.01      0.2
+18  0.001447  2     0.01      0.2
+19  0.001475  2     0.01      0.2
+20  0.001487  2     0.01      0.2
+21  0.001467  2     0.01      0.2
+22  0.001442  2     0.01      0.2
+23  0.001447  2     0.01      0.2
+24  0.001446  2     0.01      0.2
+25  0.001448  2     0.01      0.2
+26  0.001463  2     0.01      0.2
+27  0.001453  2     0.01      0.2
+28  0.001589  2     0.01      0.2
+29  0.001502  2     0.01      0.2
+30  0.001435  2     0.01      0.2
+31  0.001510  2     0.01      0.2
+32  0.001555  2     0.01      0.2
+33  0.001476  2     0.01      0.2
+34  0.001474  2     0.01      0.2
+35  0.001457  2     0.01      0.2
+36  0.001451  2     0.01      0.2
+37  0.001517  2     0.01      0.2
+38  0.001501  2     0.01      0.2
+39  0.001495  2     0.01      0.2
+40  0.001467  2     0.01      0.2
+41  0.001475  2     0.01      0.2
+42  0.001523  2     0.01      0.2
+43  0.001569  2     0.01      0.2
+44  0.001444  2     0.01      0.2
+45  0.001491  2     0.01      0.2
+46  0.001559  2     0.01      0.2
+47  0.001479  2     0.01      0.2
+48  0.001434  2     0.01      0.2
+49  0.001437  2     0.01      0.2
+DescribeResult(nobs=50, minmax=(0.0014133453369140625, 0.03721308708190918), mean=0.002196683883666992, variance=2.5537040192384864e-05, skewness=6.855921276422888, kurtosis=45.009442726353434)
