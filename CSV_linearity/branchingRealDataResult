@@ -1,0 +1,12 @@
+Input: Gawad
+Model: tempModel_fullModel_200_None_DenseDrOut_2_100_tanh_0.9_False_True_model__0_1580086869.7873142.h5
+Output:
+[[0.21173756 0.78826237]]
+(146, 10)
+
+
+Input: Wang
+Model: tempModel_fullModel_200_None_DenseDrOut_2_100_tanh_0.9_False_True_model__0_1580085768.1723585.h5
+Output:
+[[0.971835   0.02816491]]
+(16, 18)
